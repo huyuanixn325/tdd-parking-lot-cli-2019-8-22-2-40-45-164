@@ -17,6 +17,9 @@ public class ParkingBoy {
             this.parkingLot.getCars().put(parkingTicket, car);
             this.lastErrorMessage = null;
             return parkingTicket;
+        }else if(parkingLot.getCars().size()>=parkingLot.getCapacity()){
+            this.lastErrorMessage = "The parking lot is full.";
+            return null;
         }else{
             return null;
         }

@@ -30,7 +30,10 @@ public class ParkingBoy {
             this.parkingLot.getCars().remove(ticket);
             this.lastErrorMessage = null;
             return car;
-        }else {
+        }else if(ticket==null){
+            this.lastErrorMessage="Please provide your parking ticket.";
+            return null;
+        }else{
             this.lastErrorMessage = "Unrecognized parking ticket.";
             return null;
         }

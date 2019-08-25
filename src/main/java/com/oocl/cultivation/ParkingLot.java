@@ -33,6 +33,10 @@ public class ParkingLot {
         return cars.remove(ticket);
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     public Map<ParkingTicket, Car> getCars() {
         return cars;
     }

@@ -12,7 +12,7 @@ public class ParkingBoy {
     public ParkingTicket park(Car car) {
         // TODO: Please implement the method
         //throw new RuntimeException("Not implemented");
-        if (car != null ) {
+        if (car != null&&parkingLot.getCars().size() < parkingLot.getCapacity() ) {
             ParkingTicket parkingTicket = new ParkingTicket();
             this.parkingLot.getCars().put(parkingTicket, car);
             this.lastErrorMessage = null;

@@ -12,19 +12,29 @@ public class ParkingBoy {
     public ParkingTicket park(Car car) {
         // TODO: Please implement the method
         //throw new RuntimeException("Not implemented");
-        ParkingTicket parkingTicket = parkingLot.park(car);
-        return parkingTicket;
+        if (car != null ) {
+            ParkingTicket parkingTicket = new ParkingTicket();
+            this.parkingLot.getCars().put(parkingTicket, car);
+            this.lastErrorMessage = null;
+            return parkingTicket;
+        }else{
+            return null;
+        }
     }
 
     public Car fetch(ParkingTicket ticket) {
         // TODO: Please implement the method
         //throw new RuntimeException("Not implemented");
-        if (parkingLot.fetch(ticket)==null){
+        if (ticket != null && this.parkingLot.getCars().get(ticket) != null) {
+            Car car = this.parkingLot.getCars().get(ticket);
+            this.parkingLot.getCars().remove(ticket);
+            this.lastErrorMessage = null;
+            return car;
+        }else {
             this.lastErrorMessage = "Unrecognized parking ticket.";
             return null;
         }
-        Car car = parkingLot.fetch(ticket);
-        return car;
+
     }
 
     public String getLastErrorMessage() {

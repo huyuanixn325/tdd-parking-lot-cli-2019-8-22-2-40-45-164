@@ -32,4 +32,12 @@ public class ParkingLot {
         }
         return cars.remove(ticket);
     }
+
+    public Map<ParkingTicket, Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(Map<ParkingTicket, Car> cars) {
+        this.cars = cars;
+    }
 }
